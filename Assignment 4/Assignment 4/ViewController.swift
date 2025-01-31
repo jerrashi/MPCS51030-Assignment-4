@@ -13,11 +13,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        // Draw a grid using UIBezierPath
+        // Get screen dimensions
         // iphone 15 pro size: 852 x 393
         let screenHeight = self.view.frame.height
         let screenWidth = self.view.frame.width
         
-        
+        // Add a GridView subview
+        let gridView = GridView(frame: CGRect(x: 0, y: 100, width: screenWidth, height: screenWidth))
+        gridView.backgroundColor = .white
+        view.addSubview(gridView)
     }
 }

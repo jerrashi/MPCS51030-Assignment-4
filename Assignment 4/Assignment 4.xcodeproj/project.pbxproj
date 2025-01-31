@@ -13,7 +13,7 @@
 		617B9D322D4C1C4800C7FFD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 617B9D302D4C1C4800C7FFD6 /* Main.storyboard */; };
 		617B9D342D4C1C4C00C7FFD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 617B9D332D4C1C4C00C7FFD6 /* Assets.xcassets */; };
 		617B9D372D4C1C4C00C7FFD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 617B9D352D4C1C4C00C7FFD6 /* LaunchScreen.storyboard */; };
-		617B9D3F2D4C212C00C7FFD6 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617B9D3E2D4C212C00C7FFD6 /* GridView.swift */; };
+		617B9D3F2D4C212C00C7FFD6 /* CustomGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617B9D3E2D4C212C00C7FFD6 /* CustomGridView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,7 @@
 		617B9D332D4C1C4C00C7FFD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		617B9D362D4C1C4C00C7FFD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		617B9D382D4C1C4C00C7FFD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		617B9D3E2D4C212C00C7FFD6 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
+		617B9D3E2D4C212C00C7FFD6 /* CustomGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomGridView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +61,7 @@
 				617B9D2A2D4C1C4800C7FFD6 /* AppDelegate.swift */,
 				617B9D2C2D4C1C4800C7FFD6 /* SceneDelegate.swift */,
 				617B9D2E2D4C1C4800C7FFD6 /* ViewController.swift */,
-				617B9D3E2D4C212C00C7FFD6 /* GridView.swift */,
+				617B9D3E2D4C212C00C7FFD6 /* CustomGridView.swift */,
 				617B9D302D4C1C4800C7FFD6 /* Main.storyboard */,
 				617B9D332D4C1C4C00C7FFD6 /* Assets.xcassets */,
 				617B9D352D4C1C4C00C7FFD6 /* LaunchScreen.storyboard */,
@@ -143,7 +143,7 @@
 			files = (
 				617B9D2F2D4C1C4800C7FFD6 /* ViewController.swift in Sources */,
 				617B9D2B2D4C1C4800C7FFD6 /* AppDelegate.swift in Sources */,
-				617B9D3F2D4C212C00C7FFD6 /* GridView.swift in Sources */,
+				617B9D3F2D4C212C00C7FFD6 /* CustomGridView.swift in Sources */,
 				617B9D2D2D4C1C4800C7FFD6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

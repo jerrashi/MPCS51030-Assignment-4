@@ -1,5 +1,5 @@
 //
-//  GridView.swift
+//  CustomGridView.swift
 //  Assignment 4
 //
 //  Created by Jerry Shi on 1/30/25.
@@ -7,7 +7,8 @@
 
 import UIKit
 
-class GridView: UIView {
+class CustomGridView: UIView {
+    /// Please only use with square shaped views for best results
 
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -16,6 +17,11 @@ class GridView: UIView {
         // Get CGRect dimensions
         let height = rect.height
         let width = rect.width
+        
+        // Check view size
+        if height != width{
+            print("ERROR: please only use GridView with views of equal height & width")
+        }
         
         // Create a UIBezierPath
         let path = UIBezierPath()

@@ -13,9 +13,14 @@ Features Checklist (In Progress):
 📝 Required Features:  
 ✅ Create a subclass of UIView called GridView. Override the draw(_ rect: CGRect) function and use UIBezierPath to draw a grid (ie. 2 horizontal and 2 vertical lines).  
 ✅ Add the GridView to your storyboard by dragging out a view and setting the custom class to GridView.  
+✅ Add nine square subviews to the ViewController to represent each square in the grid.  
+✅ Add an outlet collection linking to each square subview in viewController.
+✅ Add UILabel or UIImageViews for the X and O pieces (make sure to enable user interaction after adding)  
+✅ Add a UIGestureRecognizer to each piece so the user can drag them around the screen  
 
 🌟 Bonus Features:  
 ❌ .  
 
 Sources / Attributions:  
 Asynchronous Class Lecture Videos  
+IBOutlet Collection Tutorial (https://www.youtube.com/watch?v=mr7pJB2eyK4)  

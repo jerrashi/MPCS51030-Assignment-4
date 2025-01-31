@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		617966AB2D4D849E00B64602 /* GamePiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617966AA2D4D849E00B64602 /* GamePiece.swift */; };
 		617B9D2B2D4C1C4800C7FFD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617B9D2A2D4C1C4800C7FFD6 /* AppDelegate.swift */; };
 		617B9D2D2D4C1C4800C7FFD6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617B9D2C2D4C1C4800C7FFD6 /* SceneDelegate.swift */; };
 		617B9D2F2D4C1C4800C7FFD6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617B9D2E2D4C1C4800C7FFD6 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		617966AA2D4D849E00B64602 /* GamePiece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePiece.swift; sourceTree = "<group>"; };
 		617B9D272D4C1C4800C7FFD6 /* Assignment 4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Assignment 4.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		617B9D2A2D4C1C4800C7FFD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		617B9D2C2D4C1C4800C7FFD6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				617B9D2E2D4C1C4800C7FFD6 /* ViewController.swift */,
 				617B9D3E2D4C212C00C7FFD6 /* CustomGridView.swift */,
 				617B9D302D4C1C4800C7FFD6 /* Main.storyboard */,
+				617966AA2D4D849E00B64602 /* GamePiece.swift */,
 				617B9D332D4C1C4C00C7FFD6 /* Assets.xcassets */,
 				617B9D352D4C1C4C00C7FFD6 /* LaunchScreen.storyboard */,
 				617B9D382D4C1C4C00C7FFD6 /* Info.plist */,
@@ -143,6 +146,7 @@
 			files = (
 				617B9D2F2D4C1C4800C7FFD6 /* ViewController.swift in Sources */,
 				617B9D2B2D4C1C4800C7FFD6 /* AppDelegate.swift in Sources */,
+				617966AB2D4D849E00B64602 /* GamePiece.swift in Sources */,
 				617B9D3F2D4C212C00C7FFD6 /* CustomGridView.swift in Sources */,
 				617B9D2D2D4C1C4800C7FFD6 /* SceneDelegate.swift in Sources */,
 			);

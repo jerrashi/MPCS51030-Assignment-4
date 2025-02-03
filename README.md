@@ -17,6 +17,10 @@ Features Checklist (In Progress):
 ✅ Add an outlet collection linking to each square subview in viewController.
 ✅ Add UILabel or UIImageViews for the X and O pieces (make sure to enable user interaction after adding)  
 ✅ Add a UIGestureRecognizer to each piece so the user can drag them around the screen  
+✅ Create a UIView subclass called InfoView and add a label and button  
+❌ Add rounded corners, a border color, and aborder width to the InfoView view by overriding awakeFromNib() and CALayer.  
+
+
 
 🌟 Bonus Features:  
 ❌ .  

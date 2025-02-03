@@ -39,16 +39,16 @@ class CustomGridView: UIView {
         for i in 1..<3 {
             // Set path starting point
             let y = height / 3 * CGFloat(i)
-            path.move(to: CGPoint(x: 0, y: y))
+            path.move(to: CGPoint(x: 3, y: y))
             // Set a line to end point
-            path.addLine(to: CGPoint(x: width, y: y))
+            path.addLine(to: CGPoint(x: width-3, y: y))
         }
         
         
         // Set the color
         UIColor.purple.setStroke()
         // Set the width
-        path.lineWidth = 5.0
+        path.lineWidth = 6.0
         // Draw the line
         path.stroke()
     }

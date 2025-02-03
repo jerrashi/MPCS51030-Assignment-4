@@ -24,7 +24,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
          */
         
         // Create "X" and "O" UILabel Views
-        let xLabel = UILabel(frame: CGRect(x: 16, y: 645, width: 131, height: 131))
+        let xLabel = UILabel(frame: CGRect(x: 16, y: 645, width: 125, height: 125))
         xLabel.text = "X"
         xLabel.textAlignment = .center
         xLabel.font = UIFont.systemFont(ofSize: 120, weight: .bold)
@@ -32,7 +32,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         xLabel.backgroundColor = .blue
         xLabel.isUserInteractionEnabled = true
         
-        let oLabel = UILabel(frame: CGRect(x: 246, y: 645, width: 131, height: 131))
+        let oLabel = UILabel(frame: CGRect(x: 246, y: 645, width: 125, height: 125))
         oLabel.text = "O"
         oLabel.textAlignment = .center
         oLabel.font = UIFont.systemFont(ofSize: 120, weight: .bold)
@@ -41,13 +41,15 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         oLabel.isUserInteractionEnabled = true
         
         
-        // Add Pan Gesture Recognizer
-        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
+        // Add Pan Gesture Recognizer to X Label
+        let xPanGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
+        xPanGesture.delegate = self
+        xLabel.addGestureRecognizer(xPanGesture)
         
-        panGesture.delegate = self
-        
-        xLabel.addGestureRecognizer(panGesture)
-        oLabel.addGestureRecognizer(panGesture)
+        // Add Pan Gesture Recognizer to O Label
+        let oPanGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
+        oPanGesture.delegate = self
+        oLabel.addGestureRecognizer(oPanGesture)
         
         // Add views to view hierarchy
         self.view.addSubview(xLabel)

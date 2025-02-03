@@ -90,15 +90,30 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="OK"/>
+                                        <connections>
+                                            <action selector="infoViewButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ylw-I7-nTa"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemPurpleColor"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ml-yB-yON">
+                                <rect key="frame" x="170" y="690" width="53" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Info"/>
+                                <connections>
+                                    <action selector="infoButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3nC-dP-5SZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="infoButton" destination="6Ml-yB-yON" id="9EG-YV-qR1"/>
+                        <outlet property="infoView" destination="9B3-uP-ZoU" id="dBE-6p-Ea9"/>
+                        <outlet property="infoViewLabel" destination="Hte-AS-GGC" id="bj2-T0-tV4"/>
                         <outletCollection property="squares" destination="LUL-f7-xb1" collectionClass="NSMutableArray" id="c2t-Ok-Uxt"/>
                         <outletCollection property="squares" destination="q9d-0L-qHa" collectionClass="NSMutableArray" id="b5M-k5-b9j"/>
                         <outletCollection property="squares" destination="HdF-sd-qpA" collectionClass="NSMutableArray" id="0E2-ht-Fat"/>

@@ -8,9 +8,14 @@
 import UIKit
 
 class ViewController: UIViewController, UIGestureRecognizerDelegate {
-    
+
     // Set Up Outlets
     @IBOutlet var squares: [UIView]!
+    // MARK: Do we need this outlet?
+    @IBOutlet weak var infoButton: UIButton!
+    @IBOutlet weak var infoView: InfoView!
+    @IBOutlet weak var infoViewLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +28,11 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         let screenWidth = self.view.frame.width
          */
         
+        // Keep infoView off screen to begin with
+        infoView.frame.origin.y = -infoView.frame.height
+        //infoView.center.x = self.view.frame.width / 2
+        
+        // TO DO: - Optional (create views in storyboard and add outlet to view controller)
         // Create "X" and "O" UILabel Views
         let xLabel = UILabel(frame: CGRect(x: 16, y: 645, width: 125, height: 125))
         xLabel.text = "X"
@@ -40,7 +50,6 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         oLabel.backgroundColor = .red
         oLabel.isUserInteractionEnabled = true
         
-        
         // Add Pan Gesture Recognizer to X Label
         let xPanGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
         xPanGesture.delegate = self
@@ -54,6 +63,15 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         // Add views to view hierarchy
         self.view.addSubview(xLabel)
         self.view.addSubview(oLabel)
+        
+        /// OPTIONAL: Enable tap gesture on infoView to dismiss alert screen
+        /*
+        // Add Tap Gesture Recognizer to infoView
+        let infoViewTapGesture = UITapGestureRecognizer(target: self, action: #selector(infoViewTapped(_:)))
+        infoViewTapGesture.delegate = self
+        infoView.addGestureRecognizer(infoViewTapGesture)
+         */
+        
     }
     
     // MARK: - Gesture Metods
@@ -66,4 +84,45 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         }
         
     }
+    
+    /*
+    @objc func infoViewTapped(_ gestureRecognizer: UITapGestureRecognizer){
+        if let view = gestureRecognizer.view{
+            UIView.animate(withDuration: 1, delay: 0, options: .curveEaseIn, animations: {
+                // Move view from off screen to middle of screen vertically
+                self.infoView.frame.origin.y = self.view.frame.height
+            })
+            {_ in
+                // reset view to right above screen
+                self.infoView.frame.origin.y = -self.infoView.frame.height
+            }
+        }
+    }
+    */
+    
+    // MARK: - Button Functions
+    @IBAction func infoButtonTapped(_ sender: UIButton) {
+        // Update infoViewLabel text
+        infoViewLabel.text = "Get 3 in a row to win!"
+                
+        // Animate infoView
+        UIView.animate(withDuration: 1, delay: 0, options: .curveEaseIn, animations: {
+            // Move view from off screen to middle of screen vertically
+            self.infoView.frame.origin.y = self.view.center.y - self.infoView.frame.height / 2
+        })
+    }
+    
+    @IBAction func infoViewButtonTapped(_ sender: UIButton) {
+        // Animate infoView
+        UIView.animate(withDuration: 1, delay: 0, options: .curveEaseIn, animations: {
+            // Move view from off screen to middle of screen vertically
+            self.infoView.frame.origin.y = self.view.frame.height
+        })
+        {_ in
+            // reset view to right above screen
+            self.infoView.frame.origin.y = -self.infoView.frame.height
+        }
+    }
+    
+    
 }

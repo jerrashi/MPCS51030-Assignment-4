@@ -19,8 +19,8 @@ Features Checklist (In Progress):
 ✅ Add a UIGestureRecognizer to each piece so the user can drag them around the screen  
 ✅ Create a UIView subclass called InfoView and add a label and button  
 ✅ Add rounded corners, a border color, and aborder width to the InfoView view by overriding awakeFromNib() and CALayer.  
-
-
+✅ Add info button. When user taps, update infoView text to instructions and animate infoView to move from offscreen to center of screen.  
+✅ When user taps "OK" button in infoVoew, animate infoView to from center of screen to offscreen. Reset the infoView to above screen to reset for future animations.    
 
 🌟 Bonus Features:  
 ❌ .  
@@ -28,3 +28,5 @@ Features Checklist (In Progress):
 Sources / Attributions:  
 Asynchronous Class Lecture Videos  
 IBOutlet Collection Tutorial (https://www.youtube.com/watch?v=mr7pJB2eyK4)  
+UIView.Animate Tutortial (https://www.hackingwithswift.com/example-code/uikit/how-to-animate-views-using-animatewithduration)  
+UIViewProperty Animator Tutorial (https://www.hackingwithswift.com/example-code/uikit/how-to-animate-views-using-uiviewpropertyanimator)  

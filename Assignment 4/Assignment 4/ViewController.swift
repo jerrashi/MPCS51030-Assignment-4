@@ -32,7 +32,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         xLabel.backgroundColor = .blue
         xLabel.isUserInteractionEnabled = true
         
-        let oLabel = UILabel(frame: CGRect(x: 246, y: 645, width: 125, height: 125))
+        let oLabel = UILabel(frame: CGRect(x: 252, y: 645, width: 125, height: 125))
         oLabel.text = "O"
         oLabel.textAlignment = .center
         oLabel.font = UIFont.systemFont(ofSize: 120, weight: .bold)

@@ -16,39 +16,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LUL-f7-xb1" userLabel="Square1" customClass="UILabel">
+                            <view opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LUL-f7-xb1" userLabel="Square1" customClass="UILabel">
                                 <rect key="frame" x="0.0" y="100" width="131" height="131"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <view opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q9d-0L-qHa" userLabel="Square2" customClass="UILabel">
+                            <view opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q9d-0L-qHa" userLabel="Square2" customClass="UILabel">
                                 <rect key="frame" x="131" y="100" width="131" height="131"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <view opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HdF-sd-qpA" userLabel="Square3" customClass="UILabel">
+                            <view opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HdF-sd-qpA" userLabel="Square3" customClass="UILabel">
                                 <rect key="frame" x="262" y="100" width="131" height="131"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <view opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bNR-Vm-Dim" userLabel="Square4" customClass="UILabel">
+                            <view opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bNR-Vm-Dim" userLabel="Square4" customClass="UILabel">
                                 <rect key="frame" x="0.0" y="231" width="131" height="131"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <view opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pVz-FS-D9r" userLabel="Square5" customClass="UILabel">
+                            <view opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pVz-FS-D9r" userLabel="Square5" customClass="UILabel">
                                 <rect key="frame" x="131" y="231" width="131" height="131"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <view opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e6L-Ct-R02" userLabel="Square6" customClass="UILabel">
+                            <view opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e6L-Ct-R02" userLabel="Square6" customClass="UILabel">
                                 <rect key="frame" x="262" y="231" width="131" height="131"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <view opaque="NO" userInteractionEnabled="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o2X-Ga-PJg" userLabel="Square7" customClass="UILabel">
+                            <view opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o2X-Ga-PJg" userLabel="Square7" customClass="UILabel">
                                 <rect key="frame" x="0.0" y="362" width="131" height="131"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <view opaque="NO" userInteractionEnabled="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hlL-nc-ii2" userLabel="Square8" customClass="UILabel">
+                            <view opaque="NO" userInteractionEnabled="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hlL-nc-ii2" userLabel="Square8" customClass="UILabel">
                                 <rect key="frame" x="131" y="362" width="131" height="131"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <view opaque="NO" userInteractionEnabled="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E69-Wo-j6S" userLabel="Square9" customClass="UILabel">
+                            <view opaque="NO" userInteractionEnabled="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E69-Wo-j6S" userLabel="Square9" customClass="UILabel">
                                 <rect key="frame" x="262" y="362" width="131" height="131"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
@@ -85,7 +85,7 @@
                                 <rect key="frame" x="100" y="506" width="193" height="131"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hte-AS-GGC">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hte-AS-GGC">
                                         <rect key="frame" x="0.0" y="0.0" width="193" height="86"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>

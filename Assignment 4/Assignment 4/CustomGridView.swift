@@ -30,18 +30,18 @@ class CustomGridView: UIView {
         for i in 1..<3 {
             // Set path starting point
             let x = width / 3 * CGFloat(i)
-            path.move(to: CGPoint(x: x, y: 3))
+            path.move(to: CGPoint(x: x, y: 0))
             // Set a line to end point
-            path.addLine(to: CGPoint(x: x, y: height-3))
+            path.addLine(to: CGPoint(x: x, y: height))
         }
         
         // Draw horizontal lines
         for i in 1..<3 {
             // Set path starting point
             let y = height / 3 * CGFloat(i)
-            path.move(to: CGPoint(x: 3, y: y))
+            path.move(to: CGPoint(x: 0, y: y))
             // Set a line to end point
-            path.addLine(to: CGPoint(x: width-3, y: y))
+            path.addLine(to: CGPoint(x: width, y: y))
         }
         
         

@@ -17,8 +17,12 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var oLabel: UILabel!
     @IBOutlet weak var customGridView: CustomGridView!
     
+    // Set up Variables
     var isXTurn = false
     var initialCenter: CGPoint = .zero
+    let grid: Grid = Grid()
+    var isWinOrTie = false
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,22 +77,15 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         // Set up x as first turn
         switchTurn()
         
-        /// OPTIONAL: Enable tap gesture on infoView to dismiss alert screen
-        /*
-        // Add Tap Gesture Recognizer to infoView
-        let infoViewTapGesture = UITapGestureRecognizer(target: self, action: #selector(infoViewTapped(_:)))
-        infoViewTapGesture.delegate = self
-        infoView.addGestureRecognizer(infoViewTapGesture)
-         */
-        
     }
     
     // MARK: - Gesture Metods
     @objc func handlePan(_ gestureRecognizer: UIPanGestureRecognizer){
+        var snappedToGrid = false
         if let view = gestureRecognizer.view{
             switch gestureRecognizer.state{
             case .began:
-                // TO-DO: Change view to snap to center of touch
+                // TODO: (Optional) Change view to snap to center of touch
                 initialCenter = view.center
             case .changed:
                 let translation = gestureRecognizer.translation(in: self.view)
@@ -96,14 +93,14 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
                 // Note: We don't use this since we track from starting position, instead of cumulative movement
                 //gestureRecognizer.setTranslation(CGPoint.zero, in: self.view)
             case .ended, .cancelled:
-                // TO-DO: Implement logic to snap views
                 for square in squares{
-                    if square.frame.contains(view.center) /*&& grid.isEmpty(square: square.tag)*/ {
+                    if square.frame.contains(view.center) && grid.isEmpty(square.tag) {
                         // Animate piece "snapping" into place
                         UIView.animate(withDuration: 1, animations: {
-                            // Move view from off screen to middle of screen vertically
                             view.center = square.center
                         })
+                        
+                        // Modify square to look the same as piece
                         square.backgroundColor = isXTurn ? .blue : .red
                         square.textAlignment = .center
                         square.text = isXTurn ? "X" : "O"
@@ -111,37 +108,50 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
                         square.textColor = UIColor.white
                         
                         // Update grid model
-                        // grid[tag] = isXTurn ? "X" : "O"
+                        grid.update(square.tag, isXTurn ? "X" : "O")
+                                                
+                        // Move piece back to starting spot
+                        view.center = self.initialCenter
                         
-                        // Hide view so snap back to spot isn't visible
-                        view.isHidden = true
+                        // Update snappedToGrid variable so we don't animate snap back twice
+                        snappedToGrid = true
                         
                         // Check for winner
-                        //checkWinner()
+                        if let winner = grid.checkWin() {
+                            infoViewLabel.text = "Congrulations! \(winner) has won!"
+                            isWinOrTie = true
+                        }
                         
-                        switchTurn()
+                        // Check for tie
+                        else if grid.checkTie() {
+                            infoViewLabel.text = "It's a tie!"
+                            isWinOrTie = true
+                        }
+                        
+                        else{
+                            switchTurn()
+                        }
                         }
                 }
                 
-                // Animate piece snapping back to starting spot
-                UIView.animate(withDuration: 0.25, animations: {
-                    // Move view from off screen to middle of screen vertically
-                    view.frame.origin.y = 645
-                    // Unwrap view as UILabel
-                    if let label = view as? UILabel {
-                        if label.text == "X" {
-                            label.frame.origin.x = 16
-                        } else {
-                            label.frame.origin.x = 252
-                        }
-                    }
-                    else {
-                        print("ERROR: View is NOT a Label")
-                    }
-                })
+                if snappedToGrid == false {
+                    // Animate piece snapping back to starting spot
+                    UIView.animate(withDuration: 0.25, animations: {
+                        // Move view back to starting spot
+                        view.center = self.initialCenter
+                    })
+                }
                 
-                // Make sure piece is no longer hidden
-                view.isHidden = false
+                if isWinOrTie {
+                    // Make sure infoView is on top of stack
+                    self.view.bringSubviewToFront(infoView)
+                            
+                    // Animate infoView
+                    UIView.animate(withDuration: 1, delay: 0, options: .curveEaseIn, animations: {
+                        // Move view from off screen to middle of screen vertically
+                        self.infoView.frame.origin.y = self.view.center.y - self.infoView.frame.height / 2
+                    })
+                }
                 
             default:
                 break
@@ -150,26 +160,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         else {
             print("ERROR - gesture recognizer view not unwrapped")
         }
-        
-        
-        
-        
     }
-    
-    /*
-    @objc func infoViewTapped(_ gestureRecognizer: UITapGestureRecognizer){
-        if let view = gestureRecognizer.view{
-            UIView.animate(withDuration: 1, delay: 0, options: .curveEaseIn, animations: {
-                // Move view from off screen to middle of screen vertically
-                self.infoView.frame.origin.y = self.view.frame.height
-            })
-            {_ in
-                // reset view to right above screen
-                self.infoView.frame.origin.y = -self.infoView.frame.height
-            }
-        }
-    }
-    */
     
     // MARK: - Button Functions
     // Info button to bring infoView to center of screen
@@ -192,7 +183,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         // Make sure infoView is on top of stack
         self.view.bringSubviewToFront(infoView)
         
-        // Animate infoView
+        // Animate infoView to move off screen
         UIView.animate(withDuration: 1, delay: 0, options: .curveEaseIn, animations: {
             // Move view from off screen to middle of screen vertically
             self.infoView.frame.origin.y = self.view.frame.height
@@ -201,9 +192,14 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             // reset view to right above screen
             self.infoView.frame.origin.y = -self.infoView.frame.height
         }
+        
+        if isWinOrTie{
+            resetGrid()
+            isWinOrTie = false
+        }
     }
     
-    // MARK: -Gameplay Functions
+    // MARK: - switchTurn Function
     func switchTurn() {
         // Store current piece
         let oldPiece = isXTurn ? xLabel : oLabel
@@ -224,6 +220,27 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             newPiece?.transform = CGAffineTransform.identity
             newPiece?.isUserInteractionEnabled = true
         }}
+    }
+    
+    // MARK: - resetGrid Function
+    func resetGrid() {
+        UIView.animate(withDuration: 0.5, animations: {
+            // Fade out squares
+            for square in self.squares {
+                square.alpha = 0
+            }
+        }) { _ in
+            // Reset squares
+            for square in self.squares {
+                square.text = ""
+                square.alpha = 1
+                square.backgroundColor = .clear
+            }
+        }
+        self.grid.clear()
+        self.isXTurn = false
+        self.switchTurn()
+        
     }
     
 }
